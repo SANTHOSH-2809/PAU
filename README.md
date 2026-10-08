@@ -19,6 +19,21 @@
 posit2
 <img width="1040" height="266" alt="image" src="https://github.com/user-attachments/assets/22a5497c-2518-47a0-94c7-854032f1cff3" />
 
+`create_clock -period 10.000 -name clk [get_ports clk]`
+
+posit3
+
+<img width="1035" height="281" alt="image" src="https://github.com/user-attachments/assets/d16b921b-5a6c-4014-b74b-1a6a2967e52e" />
+
+`create_clock -period 26.000 -name clk [get_ports clk]`
+
+<img width="1090" height="293" alt="image" src="https://github.com/user-attachments/assets/69d75b74-04b8-4e91-a688-fa3316ab1796" />
+
+negative slack when 
+`create_clock -period 26.000 -name clk [get_ports clk]`
+
+
+
 
 
 
