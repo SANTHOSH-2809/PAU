@@ -30,7 +30,31 @@ posit3
 <img width="1090" height="293" alt="image" src="https://github.com/user-attachments/assets/69d75b74-04b8-4e91-a688-fa3316ab1796" />
 
 negative slack when 
-`create_clock -period 26.000 -name clk [get_ports clk]`
+`create_clock -period 10.000 -name clk [get_ports clk]`
+
+`create_clock -period 20.000 -name clk [get_ports clk]`
+<img width="1075" height="535" alt="image" src="https://github.com/user-attachments/assets/87986f3f-2756-406e-8377-a9ea523b932a" />
+
+
+
+<img width="1037" height="271" alt="image" src="https://github.com/user-attachments/assets/31524a56-db02-43a3-9c7e-c89202e4c8f7" />
+again negative slack when
+`create_clock -period 16.000 -name clk [get_ports clk]`
+
+
+
+
+
+
+stage 4
+
+<img width="1682" height="263" alt="image" src="https://github.com/user-attachments/assets/e8ac2373-fcf0-480f-9a9a-64d663c06bf6" />
+
+<img width="946" height="373" alt="image" src="https://github.com/user-attachments/assets/3c17d913-9e34-4de9-93cf-4f441e16ea5a" />
+
+<img width="960" height="488" alt="image" src="https://github.com/user-attachments/assets/13f0761c-3a69-4af4-b417-8cc130c74daf" />
+
+
 
 
 
