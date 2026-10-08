@@ -59,51 +59,20 @@ stage 4
 
 optimized
 
-Architectural Optimizations Applied in PAU_final
-Parallel 128-Entry Decoder LUT:
-In posit8_pau.sv, replaced the 32-bit dynamic search loops and 15 cascaded CARRY4 blocks with a direct 128-entry parallel lookup table. Logic propagation delay dropped from 17.2 ns down to 0.35 ns.
-Single-Slice DSP48 Multiplier (
-14
-×
-14
-14×14):
-For Posit(8,0), decoded values only range from 
-−
-4096
-−4096 to 
-+
-4096
-+4096, requiring only signed 14 bits. Instead of decomposing a 26-bit multiplier across multiple DSP slices and carry adders, posit_mul directly performs signed 
-14
-×
-14
-14×14 multiplication, fitting into a single DSP48E1 slice with 2.8 ns delay.
-Multiplier Zero-Flag Decoupling:
-A product is zero if and only if either operand is zero (
-𝑎
-=
-0
-∨
-𝑏
-=
-0
-a=0∨b=0). Instead of chaining a 4-level 26-bit zero comparator after the DSP output, the zero flag is driven by s1_zero_a_r || s1_zero_b_r from Stage 1, eliminating 6.5 ns of logic on the critical path.
-Balanced 2-Stage Encoder (Stages 3 & 4):
-Stage 3: Parallel Leading One Detector (LOD) scans the 26-bit magnitude and computes shift offset 
-𝑆
-=
-𝑀
-−
-𝐹
-S=M−F, round bit 
-𝑅
-R, and sticky bit in ~3.8 ns.
-Stage 4: Performs tie-to-even rounding and direct 13-entry regime bit mapping without sequential loops or variable part-selects in ~2.0 ns.
-Cleaned Constraints & Pin Delays:
-constraints.xdc updated with 100 MHz clock period, false path on rst_n, realistic I/O delays, and removal of unsupported XDC commands.
+<img width="950" height="722" alt="image" src="https://github.com/user-attachments/assets/bc1d458e-ce4c-4739-b432-de00a93e4cbc" />
+
+<img width="976" height="727" alt="image" src="https://github.com/user-attachments/assets/c65e93e4-6ba0-4261-ba2b-0ab56657991b" />
 
 
+<img width="1035" height="722" alt="image" src="https://github.com/user-attachments/assets/f6f0b0e1-a06e-4272-b0b3-ad688529b80e" />
+<img width="1698" height="120" alt="image" src="https://github.com/user-attachments/assets/6a4acec7-5852-4e2c-8900-e8d78409e979" />
 
+<img width="1018" height="727" alt="image" src="https://github.com/user-attachments/assets/14371ad6-cd63-4cde-ad91-b2b53deed653" />
 
+<img width="1068" height="282" alt="image" src="https://github.com/user-attachments/assets/269838a9-c8e5-42f2-be17-35d50dd53564" />
+
+<img width="797" height="457" alt="image" src="https://github.com/user-attachments/assets/872648b5-39b5-4798-a72b-e914fc808762" />
+
+<img width="671" height="181" alt="image" src="https://github.com/user-attachments/assets/ff4a1708-a515-44d3-b55e-cfa85325f819" />
 
 
