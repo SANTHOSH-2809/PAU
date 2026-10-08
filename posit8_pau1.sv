@@ -1,5 +1,3 @@
-//timing issues 
-
 `timescale 1ns/1ps
 
 // ============================================================================
@@ -605,7 +603,9 @@ module posit_encoder #(
 
 endmodule
 
-//top module
+
+
+
 
 `timescale 1ns/1ps
 
@@ -715,6 +715,3 @@ module posit8_pau_top #(
     endgenerate
 
 endmodule
-
-
-
