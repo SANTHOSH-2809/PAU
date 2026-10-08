@@ -1,0 +1,96 @@
+PS C:\Users\santh\OneDrive\Dokumen\EDUCATION IN ECE\VLSI\Projects\PAU> .\run_verification.bat
+============================================================
+[STEP 1/2] Exhaustive Formal Verification against SoftPosit C++
+(Evaluating all 196,608 operand pairs: ADD, SUB, MUL)
+============================================================
+============================================================
+ Verifying RTL Algorithm against SoftPosit (Posit-Foundation)
+ Total vectors: 196,608 (Exhaustive 256x256x3)
+============================================================
+============================================================
+ RESULTS:
+ Total: 196608, Passed: 196608, Failed: 0
+ 100% EXACT MATCH ON ALL 196,608 TEST CASES!
+============================================================
+
+============================================================
+[STEP 2/2] Running Vivado XSim Hardware Simulation
+============================================================
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/santh/OneDrive/Dokumen/EDUCATION IN ECE/VLSI/Projects/PAU/PAU_SV/PAU_SV.srcs/sources_1/new/posit8_pau_corrected.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module posit8_pau
+INFO: [VRFC 10-311] analyzing module posit_decoder
+INFO: [VRFC 10-311] analyzing module posit_addsub
+INFO: [VRFC 10-311] analyzing module posit_mul
+INFO: [VRFC 10-311] analyzing module posit_encoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/santh/OneDrive/Dokumen/EDUCATION IN ECE/VLSI/Projects/PAU/PAU_SV/PAU_SV.srcs/sim_1/new/tb_posit8_pau_corrected.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_posit8_pau_corrected
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/santh/OneDrive/Dokumen/EDUCATION IN ECE/VLSI/Projects/PAU/PAU_SV/PAU_SV.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 28dcdd52b7b64628b68740f565b1694e --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_posit8_pau_corrected_behav xil_defaultlib.tb_posit8_pau_corrected xil_defaultlib.glbl -log elaborate.log
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.posit_decoder_default
+Compiling module xil_defaultlib.posit_addsub
+Compiling module xil_defaultlib.posit_mul
+Compiling module xil_defaultlib.posit_encoder_default
+Compiling module xil_defaultlib.posit8_pau
+Compiling module xil_defaultlib.tb_posit8_pau_corrected
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_posit8_pau_corrected_behav
+
+****** xsim v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/tb_posit8_pau_corrected_behav/xsim_script.tcl
+# xsim {tb_posit8_pau_corrected_behav} -autoloadwcfg -runall
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+run -all
+============================================================
+          Corrected Posit(8,0) PAU
+============================================================
+PASS |                     0 + 0 | A=00 B=00 OP=00 R=00
+PASS |                     1 + 1 | A=40 B=40 OP=00 R=60
+PASS |                 0.5 + 0.5 | A=20 B=20 OP=00 R=40
+PASS |                   1 + 0.5 | A=40 B=20 OP=00 R=50
+PASS |                     1 - 1 | A=40 B=40 OP=01 R=00
+PASS |                   1 - 0.5 | A=40 B=20 OP=01 R=20
+PASS |                    -1 + 1 | A=c0 B=40 OP=00 R=00
+PASS |                     1 * 1 | A=40 B=40 OP=10 R=40
+PASS |                   1 * 0.5 | A=40 B=20 OP=10 R=20
+PASS |                 0.5 * 0.5 | A=20 B=20 OP=10 R=10
+PASS |                    -1 * 1 | A=c0 B=40 OP=10 R=c0
+PASS |                   -1 * -1 | A=c0 B=c0 OP=10 R=40
+PASS |                     0 + 1 | A=00 B=40 OP=00 R=40
+PASS |                     0 * 1 | A=00 B=40 OP=10 R=00
+PASS |                   NaR + 1 | A=80 B=40 OP=00 R=80
+PASS |                   1 * NaR | A=40 B=80 OP=10 R=80
+PASS |               reserved op | A=40 B=40 OP=11 R=80
+PASS |                     2 + 1 | A=60 B=40 OP=00 R=68
+PASS |                   2 - 0.5 | A=60 B=20 OP=01 R=50
+PASS |           minpos + minpos | A=01 B=01 OP=00 R=02
+PASS |           minpos * minpos | A=01 B=01 OP=10 R=01
+PASS |                maxpos + 1 | A=7f B=40 OP=00 R=7f
+PASS |               -minpos + 1 | A=ff B=40 OP=00 R=3f
+PASS |              minpos * 1.5 | A=01 B=50 OP=10 R=02
+PASS |               32 + minpos | A=7e B=01 OP=00 R=7e
+============================================================
+PASS = 2025
+FAIL = 0
+RESULT: ALL TESTS PASSED
+============================================================
+$finish called at time : 2025 ns : File "C:/Users/santh/OneDrive/Dokumen/EDUCATION IN ECE/VLSI/Projects/PAU/PAU_SV/PAU_SV.srcs/sim_1/new/tb_posit8_pau_corrected.sv" Line 394
+exit
+INFO: [Common 17-206] Exiting xsim at Thu Oct  8 12:36:18 2026...
+
+============================================================
+COMPLETE VERIFICATION SUITE FINISHED SUCCESSFULLY
+============================================================
